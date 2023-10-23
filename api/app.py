@@ -20,3 +20,13 @@ def submit():
     input_course = request.form.get("course")
     return render_template("hello.html", name=input_name,
                            age=input_age, course=input_course)
+
+
+@app.route("/query/<q>")
+def process_query(q):
+    if q == 'dinosaurs':
+        return 'Successful'
+    else:
+        return 'Failure'
+
+
