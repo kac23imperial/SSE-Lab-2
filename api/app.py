@@ -28,5 +28,3 @@ def process_query(q):
         return 'Successful'
     else:
         return 'Failure'
-
-
