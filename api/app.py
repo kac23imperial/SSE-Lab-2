@@ -22,7 +22,7 @@ def submit():
                            age=input_age, course=input_course)
 
 
-@app.route("/query/<q>")
+@app.route("/query/<q>", methods=["GET"])
 def process_query(q):
     if q == 'dinosaurs':
         return 'Successful'
