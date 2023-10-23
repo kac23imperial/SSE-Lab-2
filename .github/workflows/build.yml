@@ -15,7 +15,6 @@ jobs:
       - name: Run flake8
         run: flake8 api/
 
-
 deploy-to-vercel:
   needs: python-formatting
   runs-on: ubuntu-latest
