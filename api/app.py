@@ -13,6 +13,8 @@ def get_image():
     return send_file("templates/Logo.png")
 
 
+
+
 @app.route("/submit", methods=["POST"])
 def submit():
     input_name = request.form.get("name")
