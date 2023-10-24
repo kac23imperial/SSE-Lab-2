@@ -1,11 +1,31 @@
 <html lang="en">
 <head>
 </head>
+
+<style>
+    .logo-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+
+    .logo.img {
+        width: 100px;
+        height: auto;
+    }
+</style>
+
 <title> Our First Website </title>
 <body style="background-color:powderblue; font-family: Arial, sans-serif;">
-Hello World
-<h1 style="font-size: 4rem; color: #2ecc71">Hello World</h1>
+<h1 style="font-size: 4rem; color: #2ecc71">Welcome to Imperial!</h1>
 <img src="Logo.png" alt="imperial logo." style="max-width: 100%; height: auto;">
+<img src="Mike.gif" alt="GIF of Mike." style="max-width: 100%; height: auto;">
+
+<div class="logo-container">
+    <img src="Logo.png" alt="imperial logo." class="logo-img">
+</div>
+
 <p>By Karen and Nicole</p>
 
 <form action="/submit" method="post">
