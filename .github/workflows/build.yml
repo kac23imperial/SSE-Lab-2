@@ -30,7 +30,7 @@ jobs:
         run: isort api/
 
   run-unit-tests:
-    needs: [python-formatting, input-formatting]
+    needs: [python-formatting, import-formatting]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
