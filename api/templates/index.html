@@ -11,8 +11,17 @@
     }
 
     .logo.img {
-        width: 20px;
+        width: 5px;
         height: auto;
+    }
+
+    .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 </style>
 
@@ -27,15 +36,17 @@
 
 <p>By Karen and Nicole</p>
 
-<form action="/submit" method="post">
-    <label for="namefield">Name:</label>
-    <input type="text" id="namefield" name="name">
-    <label for="agefield">Age:</label>
-    <input type="number" id="agefield" name="age">
-    <label for="coursefield">Course:</label>
-    <input type="text" id="namefield" name="course">
-    <input type="submit" value="Submit">
-</form>
+<div class="form-container">
+    <form action="/submit" method="post">
+        <label for="namefield">Name:</label>
+        <input type="text" id="namefield" name="name">
+        <label for="agefield">Age:</label>
+        <input type="number" id="agefield" name="age">
+        <label for="coursefield">Course:</label>
+        <input type="text" id="namefield" name="course">
+        <input type="submit" value="Submit">
+    </form>    
+</div>
 </body>
 </html>
 
