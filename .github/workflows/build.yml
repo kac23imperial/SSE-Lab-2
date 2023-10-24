@@ -30,7 +30,7 @@ jobs:
         run: isort api/
 
   run-unit-tests:
-    needs: python-formatting
+    needs: [python-formatting, input-formatting]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
         run: pytest api/*.py
 
   deploy-to-vercel:
-    needs: run-unit-tests
+    needs: [python-formatting, import-formatting, run-unit-tests]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
