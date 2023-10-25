@@ -29,6 +29,21 @@ jobs:
       - name: Run isort
         run: isort api/
 
+  code-quality-check:
+    needs: [python-formatting, import-formatting]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Install ruff
+        run: pip install ruff
+      - name: Run ruff
+        run: ruff check .
+
   run-unit-tests:
     needs: [python-formatting, import-formatting]
     runs-on: ubuntu-latest
