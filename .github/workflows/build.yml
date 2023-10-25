@@ -62,7 +62,7 @@ jobs:
         run: pytest api/*.py
 
   deploy-to-vercel:
-    needs: run-unit-tests
+    needs: [run-unit-tests, code-quality-check]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
