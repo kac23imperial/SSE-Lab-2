@@ -1,62 +1,119 @@
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Imperial College London</title>
+    <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+        margin:0;
+        font-family: Arial, sans-serif;
+        background-color: powderblue;
+        color: #333;
+        }
+
+        header {
+        background-color: #291d69;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        }
+
+        .logo-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .logo-img {
+            width: 200px;
+            height: auto;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 4px 8px 0 rgba(185, 151, 151, 0.2);
+        }
+
+        form {
+        display: grid;
+        gap: 10px;
+        }
+
+        input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+        background-color: #45a049;
+        }
+
+        .footer {
+
+            margin-top: 20px;
+
+            padding: 10px; /* more padding for larger area */
+
+            background-color: #f1f1f1; /* neutral color */
+
+            text-align: center;
+
+            font-size: 0.875rem;
+
+        }
+
+    </style>
+
 </head>
 
-<style>
-    .logo-container {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-    }
 
-    .logo-img {
-        width: 50px;
-        height: auto;
-    }
 
-    .form-container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        max-width: 500px;
-        margin: auto;
-        box-shadow: 0 4px 8px 0 rgba(185, 151, 151, 0.2);
-    }
+<body>
 
-    .footer {
-        margin-top: 40px;
-        margin-bottom: 20px;
-        border-top: 3px solid #03180c;
-        text-align: center
-    }
-</style>
+    <header>
 
-<title> Our First Website </title>
-<body style="background-color:powderblue; font-family: Arial, sans-serif;">
-<h1 style="font-size: 4rem; color: #2ecc71">Welcome to Imperial!</h1>
-<img src="mike.gif" alt="GIF of Mike." style="max-width: 100%; height: auto;">
+        <h1>Welcome to Imperial College London</h1>
 
-<div class="logo-container">
-    <img src="Logo.png" alt="imperial logo." class="logo-img">
-</div>
+    </header>
 
-<div class="form-container">
-    <form action="/submit" method="post">
-        <label for="namefield">Name:</label>
-        <input type="text" id="namefield" name="name">
-        <label for="agefield">Age:</label>
-        <input type="number" id="agefield" name="age">
-        <label for="coursefield">Course:</label>
-        <input type="text" id="namefield" name="course">
-        <input type="submit" value="Submit">
-    </form>    
-</div>
 
-<div class="footer">
-    <p>By Karen and Nicole</p>
-</div>
+
+    <div class="logo-container">
+        <img src="Logo.png" alt="Imperial College London Logo" class="logo-img">
+    </div>
+
+
+    <div class="main-content">
+        <img src="mike.gif" alt="GIF of Mike" style="max-width: 100%; height: auto; display: block; margin: auto;">
+        <div class="form-container">
+            <h2>Sign Up for Our Course</h2> <!-- Add heading for form -->
+            <form action="/submit" method="post">
+                <label for="namefield">Name:</label>
+                <input type="text" id="namefield" name="name" required>
+                <label for="agefield">Age:</label>
+                <input type="number" id="agefield" name="age" required>
+                <label for="coursefield">Course:</label>
+                <input type="text" id="coursefield" name="course" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 by Karen and Nicole. All rights reserved.</p>
+    </div>
 
 </body>
-</html>
 
+</html>
