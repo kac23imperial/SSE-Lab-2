@@ -38,10 +38,10 @@ def process_query(q):
     elif q.startswith("Which of the following numbers is the largest:"):
         return str(max([int(i) for i in re.findall(r'[0-9]+', q)]))
         # return "61"
-    elif q.startswith("What is") and "multiplied" in q:
+    elif q.startswith("What is") and "multiplied by" in q:
         words = q.split()
-        first_number = int(words[3])
+        first_number = int(words[2])
         second_number = int(words[-1][:-1])
-        return first_number * second_number
+        return str(first_number * second_number)
     else:
         return "Unknown"

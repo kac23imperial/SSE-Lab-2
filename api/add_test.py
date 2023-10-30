@@ -21,5 +21,5 @@ def test_largest_number():
                          " 61, 34, 2?") == "61"
 
 
-def multiplying():
+def test_multiplying():
     assert process_query("What is 5 multiplied by 3?") == "15"
