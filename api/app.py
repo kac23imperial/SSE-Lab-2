@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+import re
 
 app = Flask(__name__)
 
@@ -34,7 +35,8 @@ def process_query(q):
         return "Dinosaurs ruled the Earth 200 million years ago"
     elif q == "What is your name?":
         return "Karen and Nicole"
-    elif q == "Which of the following numbers is the largest: 61, 45, 5?":
-        return "61"
+    elif q.startswith("Which of the following numbers is the largest:"):
+        return str(max([int(i) for i in re.findall(r'[0-9]+', q)]))
+        # return "61"
     else:
         return "Unknown"
