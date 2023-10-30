@@ -17,5 +17,5 @@ def asking_for_name():
 
 
 def test_largest_number():
-    assert process_query("Which of the following numbers is the largest: 61, 45, 5?") \
-           == "61"
+    assert process_query("Which of the following numbers is the largest:"
+                         " 61, 45, 5?") == "61"
