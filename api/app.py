@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, request
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__)
 
@@ -32,5 +32,7 @@ def query():
 def process_query(q):
     if q == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
+    elif q == "What is your name?":
+        return "Karen and Nicole"
     else:
         return "Unknown"
