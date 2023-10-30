@@ -51,7 +51,8 @@ def process_query(q):
     elif q.startswith("Which of the following numbers is"
                       " both a square and a cube:"):
         numbers = [int(i) for i in re.findall(r'[0-9]+', q)]
-        result = [str(num) for num in numbers if (num**0.5).is_integer() and (num**(1/3)).is_integer()]
+        result = [str(num) for num in numbers if (num ** 0.5).is_integer()
+                  and (num ** (1 / 3)).is_integer()]
         return ", ".join(result)
     else:
         return "Unknown"
