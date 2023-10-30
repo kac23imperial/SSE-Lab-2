@@ -23,3 +23,7 @@ def test_largest_number():
 
 def test_multiplying():
     assert process_query("What is 5 multiplied by 3?") == "15"
+
+
+def test_addition():
+    assert process_query("What is 5 plus 3?") == "8"
