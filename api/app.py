@@ -34,7 +34,7 @@ def process_query(q):
         return "Dinosaurs ruled the Earth 200 million years ago"
     elif q == "What is your name?":
         return "Karen and Nicole"
-    elif q == "Which of the numbers is the largest: 61, 45, 5?":
+    elif q == "Which of the following numbers is the largest: 61, 45, 5?":
         return "61"
     else:
         return "Unknown"
