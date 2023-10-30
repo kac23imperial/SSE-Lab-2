@@ -48,6 +48,11 @@ def process_query(q):
         first_number = int(words[2])
         second_number = int(words[-1][:-1])
         return str(first_number + second_number)
+    elif q.startswith("What is") and "minus" in q:
+        words = q.split()
+        first_number = int(words[2])
+        second_number = int(words[-1][:-1])
+        return str(first_number - second_number)
     elif q.startswith("Which of the following numbers is"
                       " both a square and a cube:"):
         numbers = [int(i) for i in re.findall(r'[0-9]+', q)]

@@ -29,6 +29,10 @@ def test_addition():
     assert process_query("What is 5 plus 3?") == "8"
 
 
+def test_subtraction():
+    assert process_query("What is 5 minus 3?") == "2"
+
+
 def test_square_cube():
     assert process_query("Which of the following numbers is both "
                          "a square and a cube: 27, 1812, 2188, 660,"
