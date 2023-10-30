@@ -19,3 +19,7 @@ def asking_for_name():
 def test_largest_number():
     assert process_query("Which of the following numbers is the largest:"
                          " 61, 34, 2?") == "61"
+
+
+def multiplying():
+    assert process_query("What is 5 multiplied by 3?") == "15"
