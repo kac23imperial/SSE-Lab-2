@@ -48,5 +48,10 @@ def process_query(q):
         first_number = int(words[2])
         second_number = int(words[-1][:-1])
         return str(first_number + second_number)
+    elif q.startswith("Which of the following numbers is"
+                      " both a square and a cube:"):
+        numbers = [int(i) for i in re.findall(r'[0-9]+', q)]
+        result = [str(num) for num in numbers if (num**0.5).is_integer() and (num**(1/3)).is_integer()]
+        return ", ".join(result)
     else:
         return "Unknown"

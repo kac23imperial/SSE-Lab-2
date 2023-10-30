@@ -27,3 +27,9 @@ def test_multiplying():
 
 def test_addition():
     assert process_query("What is 5 plus 3?") == "8"
+
+
+def test_square_cube():
+    assert process_query("Which of the following numbers is both "
+                         "a square and a cube: 27, 1812, 2188, 660,"
+                         " 2425, 1, 1156?") == "1"
