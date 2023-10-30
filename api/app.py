@@ -45,5 +45,3 @@ def process_query(q):
         return first_number * second_number
     else:
         return "Unknown"
-
-
