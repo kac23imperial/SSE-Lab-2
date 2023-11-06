@@ -66,6 +66,8 @@ def submit_username():
                     commit_info = {
                         'name': repo['name'],
                         'last_updated': repo['updated_at'],
+                        'stars': repo['stargazers_count'],
+                        'language': repo['language'],
                         'latest_commit_hash':
                             latest_commit['sha'],
                         'latest_commit_author':
