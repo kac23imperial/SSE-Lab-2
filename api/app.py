@@ -53,8 +53,11 @@ def submit_username():
 
     if response.status_code == 200:
         repos = response.json()
-        repo_names = [repo["full_name"] for repo in repos]
-        return render_template("user_repos.html", username=username, repositories=repo_names)
+        repo_data = [{
+            'name': repo["name"],
+            'last_updated': repo["updated_at"]
+        } for repo in repos]
+        return render_template("user_repos.html", username=username, repo_data=repo_data)
     else:
         error_message = "Error fetching repos. GitHub API returned status: " + str(response.status_code)
         return render_template("error.html", error_message=error_message)
