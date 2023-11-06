@@ -1,0 +1,5 @@
+SSE-Lab2-Flask-Vercel
+
+Names: Karen Chave (me) and Nicole Audia 
+Link to deployed web app running on Vercel:https://sse-lab-2-pi.vercel.app/
+Link to GitHub repository containing source code: https://github.com/kac23imperial/SSE-Lab-2

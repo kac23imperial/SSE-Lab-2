@@ -38,6 +38,14 @@ def form():
     )
 
 
+@app.route("/githubstats", methods=["POST"])
+def stats():
+    input_username = request.form.get("username")
+    return render_template(
+        "newreturnpage.html", username=input_username
+    )
+
+
 def process_query(q):
     if q == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
