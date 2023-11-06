@@ -1,7 +1,5 @@
 from app import process_query
 
-app = Flask(__name)
-
 
 def test_knows_about_dinosaurs():
     assert (

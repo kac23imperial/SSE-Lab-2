@@ -3,14 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>GitHub Username Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .username-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+
 </head>
 <body>
 <div class="username-form">
     <form action="/submit-request
 " method="post">
-      <label for="usernamefield"> GitHub Username: </label>
-      <input type="text" id="usernamefield" name="username" required>
-      <button type="submit"> Submit</button>
+        <label for="usernamefield"> GitHub Username: </label>
+        <input type="text" id="usernamefield" name="username" required>
+        <button type="submit"> Submit</button>
     </form>
 </div>
 </body>
