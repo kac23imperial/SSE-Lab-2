@@ -49,7 +49,8 @@ def new_user():
 @app.route('/submit-request', methods=["POST"])
 def submit_username():
     username = request.form.get("username")
-    response = requests.get("https://api.github.com/users/" + username + "/repos")
+    response = requests.get("https://api.github.com/users/"
+                            + username + "/repos")
 
     if response.status_code == 200:
         repos = response.json()
@@ -59,9 +60,11 @@ def submit_username():
             'language': repo["language"],
             'stars': repo["stargazers_count"]
         } for repo in repos]
-        return render_template("user_repos.html", username=username, repo_data=repo_data)
+        return render_template("user_repos.html",
+                               username=username, repo_data=repo_data)
     else:
-        error_message = "Error fetching repos. GitHub API returned status: " + str(response.status_code)
+        error_message = ("Error fetching repos. GitHub API returned status: "
+                         + str(response.status_code))
         return render_template("error.html", error_message=error_message)
 
 
