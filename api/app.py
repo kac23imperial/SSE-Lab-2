@@ -80,7 +80,8 @@ def submit_username():
                                username=username, repos=repo_commits)
     else:
 
-        error_message = (f"Error fetching repositories. GitHub API returned status:"
+        error_message = (f"Error fetching repositories. "
+                         f"GitHub API returned status:"
                          f" {repos_response.status_code}")
         return render_template("error.html", error_message=error_message)
 
