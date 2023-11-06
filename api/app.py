@@ -56,7 +56,8 @@ def submit_username():
         repo_data = [{
             'name': repo["name"],
             'last_updated': repo["updated_at"],
-            'language' : repo["language"]
+            'language': repo["language"],
+            'stars': repo["stargazers_count"]
         } for repo in repos]
         return render_template("user_repos.html", username=username, repo_data=repo_data)
     else:
