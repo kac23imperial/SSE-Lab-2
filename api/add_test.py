@@ -1,5 +1,7 @@
 from app import process_query
 
+app = Flask(__name)
+
 
 def test_knows_about_dinosaurs():
     assert (
@@ -37,6 +39,3 @@ def test_square_cube():
     assert process_query("Which of the following numbers is both "
                          "a square and a cube: 27, 1812, 2188, 660,"
                          " 2425, 1, 1156?") == "1"
-
-if __name__ == "__main__":
-    app.run(debug=True)
