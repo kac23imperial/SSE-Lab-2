@@ -29,11 +29,12 @@ def query():
     q = request.args.get("q")
     return process_query(q)
 
+
 @app.route("/form")
 def form():
     input_username = request.form.get("username")
     return render_template(
-    "newpage.html", username=input_username
+        "newpage.html", username=input_username
     )
 
 
