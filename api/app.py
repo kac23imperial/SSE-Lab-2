@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_file
 import re
+import requests
 
 app = Flask(__name__)
 
@@ -38,6 +39,31 @@ def form():
     )
 
 
+@app.route('/new-user', methods=['GET'])
+def new_user():
+    return render_template(
+        "github_form.html"
+    )
+
+
+@app.route('/submit-request', methods=["POST"])
+def submit_username():
+    username = request.form.get("username")
+    response = requests.get("https://api.github.com/users/" + username + "/repos")
+
+    if response.status_code == 200:
+        repos = response.json()
+        repo_names = [repo["full_name"] for repo in repos]
+        return render_template("user_repos.html", username=username, repositories=repo_names)
+    else:
+        error_message = "Error fetching repos. GitHub API returned status: " + str(response.status_code)
+        return render_template("error.html", error_message=error_message)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
 @app.route("/githubstats", methods=["POST"])
 def stats():
     input_username = request.form.get("username")
@@ -46,6 +72,7 @@ def stats():
     )
 
 
+@app.route
 def process_query(q):
     if q == "dinosaurs":
         return "Dinosaurs ruled the Earth 200 million years ago"
