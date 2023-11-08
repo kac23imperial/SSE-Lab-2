@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Followers</title>
+</head>
+<body style="background-color:#70a6ad; font-family: Arial, sans-serif;">
+<h1>Followers</h1>
+<ul>
+    {% for follower in followers %}
+            <li style="font-size: 4rem; color: #080d38">You're followed by {{ follower.login }}!</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

@@ -8,31 +8,31 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Repositories for {{ username }}</h1>
-    <table>
-        <tr>
-            <th>Repository Name</th>
-            <th>Last Updated</th>
-            <th> Stars </th>
-            <th> Language </th>
-            <th>Latest Commit Hash</th>
-            <th>Latest Commit Author</th>
-            <th>Latest Commit Date</th>
-            <th>Latest Commit Message</th>
-        </tr>
-        {% for repo in repos %}
-        <tr>
-            <td>{{ repo.name }}</td>
-            <td>{{ repo.last_updated }}</td>
-            <td> {{ repo.stars }}</td>
-            <td> {{ repo.language }}</td>
-            <td>{{ repo.latest_commit_hash }}</td>
-            <td>{{ repo.latest_commit_author }}</td>
-            <td>{{ repo.latest_commit_date }}</td>
-            <td>{{ repo.latest_commit_message }}</td>
-        </tr>
-        {% endfor %}
-
+<h1>Repositories for {{ username }}</h1>
+<table>
+    <tr>
+        <th>Repository Name</th>
+        <th>Last Updated</th>
+        <th> Stars</th>
+        <th> Language</th>
+        <th>Latest Commit Hash</th>
+        <th>Latest Commit Author</th>
+        <th>Latest Commit Date</th>
+        <th>Latest Commit Message</th>
+    </tr>
+    {% for repo in repos %}
+    <tr>
+        <td>{{ repo.name }}</td>
+        <td>{{ repo.last_updated }}</td>
+        <td> {{ repo.stars }}</td>
+        <td> {{ repo.language }}</td>
+        <td>{{ repo.latest_commit_hash }}</td>
+        <td>{{ repo.latest_commit_author }}</td>
+        <td>{{ repo.latest_commit_date }}</td>
+        <td>{{ repo.latest_commit_message }}</td>
+    </tr>
+    {% endfor %}
 </table>
+    <a href=" {{ url_for('followers', username=username) }}"> You can also retrieve your follower information here! </a>
 </body>
 </html>
