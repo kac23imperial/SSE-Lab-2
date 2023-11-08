@@ -131,3 +131,16 @@ def process_query(q):
         return ", ".join(result)
     else:
         return "Unknown"
+
+
+@app.route('/followers/<username>')
+def followers(username):
+    url = f"https://api.github.com/users/{username}/followers"
+    response = requests.get(url)
+    followers = response.json() if response.status_code == 200 else []
+
+    return render_template('followers.html', followers=followers)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
